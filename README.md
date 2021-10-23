@@ -29,10 +29,5 @@ colorscheme neosolarized
 
 ### TODO
 
-- codeaction highlight
-- lspkind? popup
-- vim syntax
-- terminal colors
-- neomake
+- pum/lsp-cmp style improvements
 - All colors should be easily changable via setup function
-- git commits

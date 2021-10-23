@@ -74,7 +74,6 @@ Group.new('DiffText',       colors.blue,          colors.base02,    styles.bold,
 Group.new('SignColumn',     colors.base0,           colors.none,    styles.NONE)
 Group.new('Conceal',        colors.blue,            colors.none,    styles.NONE)
 
--- needs undercurl
 Group.new('SpellBad',      colors.none,     colors.none, styles.undercurl, colors.red)
 Group.new('SpellCap',      colors.none,     colors.none, styles.undercurl, colors.violet)
 Group.new('SpellRare',     colors.none,     colors.none, styles.undercurl, colors.cyan)
@@ -86,7 +85,6 @@ Group.new('PmenuSel',      colors.base01,   colors.base2,   styles.reverse)
 Group.new('PmenuSbar',     colors.base2,    colors.base0,   styles.reverse)
 Group.new('PmenuThumb',    colors.base0,    colors.base03,  styles.reverse)
 
--- after convergence with neosolarized, tweak these or even unset them?
 Group.new('CmpItemKind',        colors.base0,    colors.base02,  styles.reverse)
 Group.new('CmpItemMenu',        colors.base0,    colors.base02,  styles.reverse)
 Group.new('CmpItemAbbr',        colors.base0,    colors.base02,  styles.reverse)
