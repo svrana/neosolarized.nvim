@@ -1,0 +1,1 @@
+lua require('neosolarized')
