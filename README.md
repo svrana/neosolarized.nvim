@@ -4,6 +4,8 @@ A truecolor, solarized dark colorscheme using [tjdevries/colorbuddy.vim](https:/
 
 Based on [NeoSolarized](https://github.com/overcache/NeoSolarized).
 
+![](https://github.com/svrana/neosolarized.nvim/blob/assets/assets/screenshot1.png)
+
 ## Why?
 
 I've used a bunch of solarized themes. The best I have found is NeoSolarized. Despite it
