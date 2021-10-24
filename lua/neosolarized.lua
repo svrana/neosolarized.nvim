@@ -1,4 +1,16 @@
-vim.cmd('packadd! colorbuddy.nvim')
+local cmd = vim.cmd
+local fn = vim.fn
+
+local M = {}
+
+cmd([[
+    packadd! colorbuddy.nvim
+    highlight clear
+]])
+
+if fn.exists('syntax_on') then
+	cmd('syntax reset')
+end
 
 local Color = require('colorbuddy.init').Color
 local colors = require('colorbuddy.init').colors
@@ -161,4 +173,38 @@ Group.new('NeomakeNeomakeInfoSign', colors.green)
 
 Group.new('TelescopeMatching',  colors.orange,  groups.Special,     groups.Special,     groups.Special)
 
-Group.new('DefinitionIcon', colors.cyan)
+function M.translate(group)
+  if fn.has("nvim-0.6.0") == 0 then
+    return group
+  end
+
+  if not string.match(group, "^LspDiagnostics") then
+    return group
+  end
+
+  local translated = group
+  translated = string.gsub(translated, "^LspDiagnosticsDefault", "Diagnostic")
+  translated = string.gsub(translated, "^LspDiagnostics", "Diagnostic")
+  translated = string.gsub(translated, "Warning$", "Warn")
+  translated = string.gsub(translated, "Information$", "Info")
+  return translated
+end
+
+local lspColors = {
+    Error = colors.red,
+    Warning = colors.yellow,
+    Information = colors.blue,
+    Hint = colors.cyan,
+}
+
+for _, lsp in pairs({ "Error", "Warning", "Information", "Hint" }) do
+    local lspGroup = Group.new(M.translate("LspDiagnosticsDefault" .. lsp), lspColors[lsp])
+    Group.link(M.translate("LspDiagnosticsVirtualText" .. lsp), lspGroup)
+    Group.new(M.translate("LspDiagnosticsUnderline" .. lsp), colors.none, colors.none, styles.undercurl, lspColors[lsp])
+end
+
+for  _, name in pairs({ "LspReferenceText", "LspReferenceRead", "LspReferenceWrite" }) do
+    Group.link(M.translate(name), groups.CursorLine)
+end
+
+return M
