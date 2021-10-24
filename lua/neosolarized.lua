@@ -11,11 +11,9 @@ local M = {
     Group = require('colorbuddy.init').Group,
     groups = require('colorbuddy.init').groups,
     styles = require('colorbuddy.init').styles,
-
-    initialized = false
 }
 
-function M.init(opts)
+function M.setup(opts)
     if not opts then opts = {} end
 
     for k,v in pairs(defaults) do
@@ -218,14 +216,7 @@ function M.init(opts)
         Group.link(M.translate(name), groups.CursorLine)
     end
 
-    M.initialized = true
     return M
-end
-
-function M.setup(opts)
-    if not M.initialized then
-        M.init(opts)
-    end
 end
 
 return M

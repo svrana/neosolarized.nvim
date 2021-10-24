@@ -23,7 +23,7 @@ customizations via a setup function.
 
 Make sure you have [colorbuddy](https://github.com/tjdevries/colorbuddy.vim) installed.
 
-From your init.vim:
+After installed colorbuddy and neosolarized.nvim with your favorite package manager, from your init.vim:
 
 ```
 lua << EOF
@@ -35,6 +35,21 @@ EOF
 
 Example above is with the default settings.
 
+This will change the foreground color of the TODO highlight.
+
+```
+lua << EOF
+  n = require('neosolarized').setup({
+    comment_italics = true,
+  })
+  n.Group.new('TODO', n.colors.blue)
+EOF
+```
+
+The `Group` above is from [colorbuddy](https://github.com/tjdevries/colorbuddy.vim). The
+solarized colors are defined in n.colors and returned so you do not need to define them
+again.
+
 ## Features
 
 - Easy customization without messing with nvim highlights
@@ -42,4 +57,11 @@ Example above is with the default settings.
 
 ### TODO
 
-- pum/lsp-cmp style improvements
+- pum/lsp-cmp style improvements (A dark background option would be nice)
+- treesitter highlights have not been defined. I do use treesitter for highlighting but
+  the existing groups have worked well enough for me up to this point.
+- port the remaining features from neosolarized if they are requested by others
+
+```
+
+```

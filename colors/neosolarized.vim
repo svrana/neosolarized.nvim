@@ -1,8 +1,2 @@
-" Example customization:
-"
-" lua << EOF
-"    n = require('neosolarized').init()
-"    n.setup({
-"       TODO = { n.Group.new('TODO', n.colors.blue) }
-"    })
-" EOF
+" this file allows us to change colorschemes with the vim command `colorscheme neosolarized` *after*
+" the plugin has already been initialized, i.e., its setup command has run.
