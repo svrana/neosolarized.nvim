@@ -129,6 +129,8 @@ function M.setup(opts)
     Group.new('ColorColumn', colors.none, colors.base02, styles.NONE)
     Group.new('Cursor', colors.base03, colors.base0, styles.NONE)
     Group.link('lCursor', groups.Cursor)
+    Group.link('TermCursor', groups.Cursor)
+    Group.new('TermCursorNC', colors.base03, colors.base01)
 
     Group.new('MatchParen', colors.red, colors.base01, styles.bold)
 
@@ -137,14 +139,13 @@ function M.setup(opts)
     Group.new('GitGutterDelete', colors.red)
     Group.new('GitGutterChangeDelete', colors.red)
 
-    -- vim highlighting (these don't seem to be working)
+    -- vim highlighting
     Group.link('vimVar', groups.Identifier)
     Group.link('vimFunc', groups.Identifier)
     Group.link('vimUserFunc', groups.Identifier)
     Group.link('helpSpecial', groups.Special)
     Group.link('vimSet', groups.Normal)
     Group.link('vimSetEqual', groups.Normal)
-
     Group.new('vimCommentString', colors.violet)
     Group.new('vimCommand', colors.yellow)
     Group.new('vimCmdSep', colors.blue, colors.NONE, styles.bold)
@@ -204,8 +205,12 @@ function M.setup(opts)
         return translated
     end
 
-    local lspColors = {Error = colors.red, Warning = colors.yellow, Information = colors.blue, Hint = colors.cyan}
-
+    local lspColors = {
+        Error = colors.red,
+        Warning = colors.yellow,
+        Information = colors.blue,
+        Hint = colors.cyan,
+    }
     for _, lsp in pairs({"Error", "Warning", "Information", "Hint"}) do
         local lspGroup = Group.new(M.translate("LspDiagnosticsDefault" .. lsp), lspColors[lsp])
         Group.link(M.translate("LspDiagnosticsVirtualText" .. lsp), lspGroup)
