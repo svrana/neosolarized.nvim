@@ -9,7 +9,7 @@ Based on [NeoSolarized](https://github.com/overcache/NeoSolarized).
 I've used a bunch of solarized themes. The best I have found is NeoSolarized. Despite it
 being fantastic, like most themes, I wanted to tweak it here and there and really wanted a
 lua solution for this in the style of the latest and greatest neovim plugins that allow
-customizations via a nicely written setup function.
+customizations via a setup function.
 
 ## Limitations
 
@@ -24,10 +24,20 @@ Make sure you have [colorbuddy](https://github.com/tjdevries/colorbuddy.vim) ins
 From your init.vim:
 
 ```
-colorscheme neosolarized
+lua << EOF
+  require('neosolarized').setup({
+    comment_italics = true,
+  })
+EOF
 ```
+
+Example above is with the default settings.
+
+## Features
+
+- Easy customization without messing with nvim highlights
+- LSP diagnostic colors (no need for lsp-colors, for example)
 
 ### TODO
 
 - pum/lsp-cmp style improvements
-- All colors should be easily changable via setup function
