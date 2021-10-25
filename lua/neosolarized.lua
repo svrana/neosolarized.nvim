@@ -118,8 +118,8 @@ function M.setup(opts)
     -- pum (popup menu)
     Group.new('Pmenu', groups.Normal, colors.base02, styles.none) -- popup menu normal item
     Group.new('PmenuSel', colors.base01, colors.base2, styles.reverse) -- selected item
-    Group.new('PmenuSbar', colors.base2, colors.base0, styles.reverse) -- scrollbar
-    Group.new('PmenuThumb', colors.base0, colors.base03, styles.reverse)
+    Group.new('PmenuSbar', colors.base02, colors.none, styles.reverse)
+    Group.new('PmenuThumb', colors.base0, colors.none, styles.reverse)
 
     Group.new('CmpItemKind', colors.green, colors.none, styles.none)
     Group.new('CmpItemMenu', groups.NormalNC, colors.bg, styles.none)
