@@ -57,7 +57,13 @@ function M.setup(opts)
     Color.new('cyan', '#2aa198')
     Color.new('green', '#719e07')
 
+    Color.new('bg', colors.base03)
+
+    -- normal text
     Group.new('Normal', colors.base0, colors.NONE, styles.NONE)
+    -- normal non-current text
+    Group.new('NormalNC', colors.base0:dark(), colors.NONE, styles.NONE)
+
     Group.new('Comment', colors.base01, colors.none, opts.comment_italics and styles.italic or styles.NONE)
     Group.new('Constant', colors.cyan, colors.none, styles.NONE)
     -- Any variable name, function or class name
@@ -110,15 +116,15 @@ function M.setup(opts)
     Group.new('SpellLocal', colors.none, colors.none, styles.undercurl, colors.yellow)
 
     -- pum (popup menu)
-    Group.new('Pmenu', colors.base0, colors.base02, styles.reverse)
-    Group.new('PmenuSel', colors.base01, colors.base2, styles.reverse)
-    Group.new('PmenuSbar', colors.base2, colors.base0, styles.reverse)
+    Group.new('Pmenu', groups.Normal, colors.base02, styles.none) -- popup menu normal item
+    Group.new('PmenuSel', colors.base01, colors.base2, styles.reverse) -- selected item
+    Group.new('PmenuSbar', colors.base2, colors.base0, styles.reverse) -- scrollbar
     Group.new('PmenuThumb', colors.base0, colors.base03, styles.reverse)
 
-    Group.new('CmpItemKind', colors.base0, colors.base02, styles.reverse)
-    Group.new('CmpItemMenu', colors.base0, colors.base02, styles.reverse)
-    Group.new('CmpItemAbbr', colors.base0, colors.base02, styles.reverse)
-    Group.new('CmpItemAbbrMatch', colors.base0, colors.base02, styles.reverse)
+    Group.new('CmpItemKind', colors.green, colors.none, styles.none)
+    Group.new('CmpItemMenu', groups.NormalNC, colors.bg, styles.none)
+    -- Group.new('CmpItemAbbr', colors.base0, colors.bg, styles.none)
+    -- Group.new('CmpItemAbbrMatch', colors.base0, colors.bg, styles.none)
 
     Group.new('TabLine', colors.base0, colors.base02, styles.NONE, colors.base0)
     Group.new('TabLineFill', colors.base0, colors.base02, styles.NONE, colors.base0)
