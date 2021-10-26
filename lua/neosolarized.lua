@@ -121,10 +121,8 @@ function M.setup(opts)
     Group.new('PmenuSbar', colors.base02, colors.none, styles.reverse)
     Group.new('PmenuThumb', colors.base0, colors.none, styles.reverse)
 
-    Group.new('CmpItemKind', colors.green, colors.none, styles.none)
-    Group.new('CmpItemMenu', groups.NormalNC, colors.bg, styles.none)
-    -- Group.new('CmpItemAbbr', colors.base0, colors.bg, styles.none)
-    -- Group.new('CmpItemAbbrMatch', colors.base0, colors.bg, styles.none)
+    -- be nice for this float border to be cyan if active
+    Group.new('FloatBorder', colors.base02)
 
     Group.new('TabLine', colors.base0, colors.base02, styles.NONE, colors.base0)
     Group.new('TabLineFill', colors.base0, colors.base02, styles.NONE, colors.base0)
@@ -195,6 +193,11 @@ function M.setup(opts)
     Group.new('NeomakeWarningSign', colors.yellow)
     Group.new('NeomakeMessageSign', colors.cyan)
     Group.new('NeomakeNeomakeInfoSign', colors.green)
+
+    Group.new('CmpItemKind', colors.green, colors.none, styles.none)
+    Group.new('CmpItemMenu', groups.NormalNC, colors.bg, styles.none)
+    -- Group.new('CmpItemAbbr', colors.base0, colors.bg, styles.none)
+    -- Group.new('CmpItemAbbrMatch', colors.base0, colors.bg, styles.none)
 
     Group.new('LspSagaCodeActionTitle',         colors.green)
     Group.new('LspSagaBorderTitle',             colors.yellow, colors.none, styles.bold)
