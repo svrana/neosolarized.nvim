@@ -57,12 +57,15 @@ function M.setup(opts)
     Color.new('cyan',       '#2aa198')
     Color.new('green',      '#719e07')
 
-    Color.new('bg', colors.base03)
+    Color.new('bg',             colors.base03)
+    Group.new('Error',          colors.red)
+    Group.new('Warning',        colors.yellow)
+    Group.new('Information',    colors.blue)
+    Group.new('Hint',           colors.cyan)
 
-    -- normal text
-    Group.new('Normal', colors.base0, colors.NONE, styles.NONE)
     -- normal non-current text
-    Group.new('NormalNC', colors.base0:dark(), colors.NONE, styles.NONE)
+    Group.new('Normal',     colors.base0,           colors.NONE, styles.NONE)
+    Group.new('NormalNC',   colors.base0:dark(),    colors.NONE, styles.NONE)
 
     Group.new('Comment', colors.base01, colors.none, opts.comment_italics and styles.italic or styles.NONE)
     Group.new('Constant', colors.cyan, colors.none, styles.NONE)
@@ -227,6 +230,48 @@ function M.setup(opts)
     Group.new('TelescopeTitle',         groups.Normal) -- separate them from the border a little, but not make them pop
     Group.new('TelescopePromptPrefix',  groups.Normal) -- default is groups.Identifier
 
+    Group.new('NeogitDiffAddHighlight', colors.blue, colors.red)
+    Group.new('NeogitDiffDeleteHighlight', colors.blue, colors.red)
+    --hi def NeogitDiffAddHighlight guibg=#404040 guifg=#859900
+    -- hi def NeogitDiffDeleteHighlight guibg=#404040 guifg=#dc322f
+    -- hi def NeogitDiffContextHighlight guibg=#333333 guifg=#b2b2b2
+    Group.new('NeogitHunkHeader', groups.Normal, colors.base02)
+    Group.new('NeogitHunkHeaderHighlight', groups.Normal, colors.red)
+    Group.new('NeogitDiffContextHighlight', colors.base2, colors.base02)
+    -- hi def NeogitHunkHeaderHighlight guifg=#cccccc guibg=#4d4d4d
+    -- hi def NeogitFilePath guifg=#798bf2
+
+    -- hi def NeogitCommitViewHeader guifg=#ffffff guibg=#94bbd1
+
+    -- Group.new('NeogitDiffAddHighlight', colors.green,
+
+    -- NeogitDiffAddHighlight guibg=#404040 guifg=#859900
+    -- NeogitDiffDeleteHighlight guibg=#404040 guifg=#dc322f
+    -- NeogitDiffContextHighlight guibg=#333333 guifg=#b2b2b2
+
+    -- NeogitHunkHeader guifg=#cccccc guibg=#404040
+    -- NeogitHunkHeaderHighlight guifg=#cccccc guibg=#4d4d4d
+    -- hi NeogitNotificationInfo guifg=#80ff95
+    --
+    --hi def link NeogitCommandText Comment
+     --hi def link NeogitCommandTime Comment
+     --hi NeogitCommandCodeNormal guifg=#80ff95
+     --hi NeogitCommandCodeError guifg=#c44323
+     --hi def link NeogitCommandTime Comment
+
+    Group.new('NeogitCommandText',          groups.Normal)
+    Group.new('NeogitCommandTimeText',      groups.Normal)
+    Group.new('NeogitCommandCodeNormal',    groups.Normal)
+    Group.new('NeogitCommandCodeError',     groups.Error)
+
+
+    Group.new('NeogitNotificationError',    groups.Error,           colors.none)
+    Group.new('NeogitNotificationInfo',     groups.Information,     colors.none)
+    Group.new('NeogitNotificationWarning',  groups.Warning,         colors.none)
+
+    -- Group.new('NeogitHunkHeaderHighlight',  groups.Visual, groups.Visual)
+    -- Group.new('NeogitDiffAddHighlight',     groups.Visual, groups.Visual)
+
     function M.translate(group)
         if fn.has("nvim-0.6.0") == 0 then return group end
 
@@ -241,10 +286,10 @@ function M.setup(opts)
     end
 
     local lspColors = {
-        Error = colors.red,
-        Warning = colors.yellow,
-        Information = colors.blue,
-        Hint = colors.cyan,
+         Error          = groups.Error,
+         Warning        = groups.Warning,
+         Information    = groups.Information,
+         Hint           = groups.Hint,
     }
     for _, lsp in pairs({"Error", "Warning", "Information", "Hint"}) do
         local lspGroup = Group.new(M.translate("LspDiagnosticsDefault" .. lsp), lspColors[lsp])
