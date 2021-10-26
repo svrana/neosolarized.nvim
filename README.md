@@ -55,6 +55,14 @@ again.
 - Easy customization without messing with nvim highlights
 - LSP diagnostic colors (no need for lsp-colors, for example)
 
+### Plugins supported
+
+- nvim-cmp
+- lsp-saga
+- telescope
+- vim-gitgutter
+- neomake
+
 ### TODO
 
 - pum/lsp-cmp style improvements (A dark background option would be nice)

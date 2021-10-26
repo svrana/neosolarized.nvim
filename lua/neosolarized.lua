@@ -221,7 +221,11 @@ function M.setup(opts)
     Group.new('LspSagaFinderSelection',         colors.green, colors.none, styles.bold)
     --Group.new('SagaShadow', colors.base02)
 
-    Group.new('TelescopeMatching', colors.orange, groups.Special, groups.Special, groups.Special)
+    Group.new('TelescopeMatching',      colors.orange, groups.Special, groups.Special, groups.Special)
+    Group.new('TelescopeBorder',        colors.base01) -- float border not quite dark enough, maybe that needs to change?
+    Group.new('TelescopePromptBorder',  colors.cyan)   -- active border lighter for clarity
+    Group.new('TelescopeTitle',         groups.Normal) -- separate them from the border a little, but not make them pop
+    Group.new('TelescopePromptPrefix',  groups.Normal) -- default is groups.Identifier
 
     function M.translate(group)
         if fn.has("nvim-0.6.0") == 0 then return group end
