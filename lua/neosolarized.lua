@@ -129,7 +129,7 @@ function M.setup(opts)
 
     Group.new('TabLine', colors.base0, colors.base02, styles.NONE, colors.base0)
     Group.new('TabLineFill', colors.base0, colors.base02, styles.NONE, colors.base0)
-    Group.new('TabLineSel', colors.base01, colors.base2, styles.reverse, colors.base0)
+    Group.new('TabLineSel', colors.base01, colors.base02, styles.reverse, colors.base0)
 
     Group.new('CursorLine', colors.none, colors.base02, styles.NONE, colors.base1)
     Group.new('CursorLineNr', colors.none, colors.base02, styles.NONE, colors.base1)
@@ -232,45 +232,20 @@ function M.setup(opts)
 
     Group.new('NeogitDiffAddHighlight', colors.blue, colors.red)
     Group.new('NeogitDiffDeleteHighlight', colors.blue, colors.red)
-    --hi def NeogitDiffAddHighlight guibg=#404040 guifg=#859900
-    -- hi def NeogitDiffDeleteHighlight guibg=#404040 guifg=#dc322f
-    -- hi def NeogitDiffContextHighlight guibg=#333333 guifg=#b2b2b2
     Group.new('NeogitHunkHeader', groups.Normal, colors.base02)
     Group.new('NeogitHunkHeaderHighlight', groups.Normal, colors.red)
     Group.new('NeogitDiffContextHighlight', colors.base2, colors.base02)
-    -- hi def NeogitHunkHeaderHighlight guifg=#cccccc guibg=#4d4d4d
-    -- hi def NeogitFilePath guifg=#798bf2
-
-    -- hi def NeogitCommitViewHeader guifg=#ffffff guibg=#94bbd1
-
-    -- Group.new('NeogitDiffAddHighlight', colors.green,
-
-    -- NeogitDiffAddHighlight guibg=#404040 guifg=#859900
-    -- NeogitDiffDeleteHighlight guibg=#404040 guifg=#dc322f
-    -- NeogitDiffContextHighlight guibg=#333333 guifg=#b2b2b2
-
-    -- NeogitHunkHeader guifg=#cccccc guibg=#404040
-    -- NeogitHunkHeaderHighlight guifg=#cccccc guibg=#4d4d4d
-    -- hi NeogitNotificationInfo guifg=#80ff95
-    --
-    --hi def link NeogitCommandText Comment
-     --hi def link NeogitCommandTime Comment
-     --hi NeogitCommandCodeNormal guifg=#80ff95
-     --hi NeogitCommandCodeError guifg=#c44323
-     --hi def link NeogitCommandTime Comment
-
     Group.new('NeogitCommandText',          groups.Normal)
     Group.new('NeogitCommandTimeText',      groups.Normal)
     Group.new('NeogitCommandCodeNormal',    groups.Normal)
     Group.new('NeogitCommandCodeError',     groups.Error)
-
-
     Group.new('NeogitNotificationError',    groups.Error,           colors.none)
     Group.new('NeogitNotificationInfo',     groups.Information,     colors.none)
     Group.new('NeogitNotificationWarning',  groups.Warning,         colors.none)
 
-    -- Group.new('NeogitHunkHeaderHighlight',  groups.Visual, groups.Visual)
-    -- Group.new('NeogitDiffAddHighlight',     groups.Visual, groups.Visual)
+    -- seblj/nvim-tabline
+    Group.new('TabLineSeparatorActive', colors.cyan)
+    Group.link('TabLineModifiedSeparatorActive', groups.TablineSeparatorActive)
 
     function M.translate(group)
         if fn.has("nvim-0.6.0") == 0 then return group end

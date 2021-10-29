@@ -62,6 +62,7 @@ again.
 - telescope
 - vim-gitgutter
 - neomake
+- seblj/nvim-tabline
 
 ### TODO
 
