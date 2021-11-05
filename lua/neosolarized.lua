@@ -247,6 +247,10 @@ function M.setup(opts)
     Group.new('TabLineSeparatorActive', colors.cyan)
     Group.link('TabLineModifiedSeparatorActive', groups.TablineSeparatorActive)
 
+    -- kevinhwang91/nvim-bqf
+    Group.new('BqfPreviewBorder', colors.base01)
+    Group.new('BqfSign', colors.cyan)
+
     function M.translate(group)
         if fn.has("nvim-0.6.0") == 0 then return group end
 

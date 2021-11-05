@@ -63,6 +63,7 @@ again.
 - vim-gitgutter
 - neomake
 - seblj/nvim-tabline
+- kevinwhang91/nvim-bqf
 
 ### TODO
 
