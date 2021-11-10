@@ -251,6 +251,11 @@ function M.setup(opts)
     Group.new('BqfPreviewBorder', colors.base01)
     Group.new('BqfSign', colors.cyan)
 
+    -- Primeagen/harpoon
+    Group.new("HarpoonBorder", colors.cyan)
+    Group.new("HarpoonWindow", groups.Normal)
+
+
     function M.translate(group)
         if fn.has("nvim-0.6.0") == 0 then return group end
 

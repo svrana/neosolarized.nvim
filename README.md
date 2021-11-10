@@ -64,6 +64,7 @@ again.
 - neomake
 - seblj/nvim-tabline
 - kevinwhang91/nvim-bqf
+- Primeagen/harpoon
 
 ### TODO
 
