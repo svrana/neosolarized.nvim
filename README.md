@@ -65,6 +65,7 @@ again.
 - seblj/nvim-tabline
 - kevinwhang91/nvim-bqf
 - Primeagen/harpoon
+- lewis6991/gitsigns.nvim
 
 ### TODO
 
@@ -72,7 +73,4 @@ again.
 - treesitter highlights have not been defined. I do use treesitter for highlighting but
   the existing groups have worked well enough for me up to this point.
 - port the remaining features from neosolarized if they are requested by others
-
-```
-
-```
+- non-truecolors version for console use
