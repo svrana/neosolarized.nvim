@@ -147,9 +147,11 @@ function M.setup(opts)
     Group.new('GitGutterChangeDelete', colors.red)
 
     Group.new('GitSignsAddLn', colors.green)
+    Group.new('GitSignsAddNr', colors.green)
     Group.new('GitSignsChangeLn', colors.yellow)
+    Group.new('GitSignsChangeNr', colors.yellow)
     Group.new('GitSignsDeleteLn', colors.red)
-    Group.new('GitSignsChangeLn', colors.red)
+    Group.new('GitSignsDeleteNr', colors.red)
 
     -- vim highlighting
     Group.link('vimVar', groups.Identifier)
