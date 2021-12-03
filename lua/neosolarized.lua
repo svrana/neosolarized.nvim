@@ -152,6 +152,7 @@ function M.setup(opts)
     Group.new('GitSignsChangeNr', colors.yellow)
     Group.new('GitSignsDeleteLn', colors.red)
     Group.new('GitSignsDeleteNr', colors.red)
+    Group.link('GitSignsCurrentLineBlame', groups.Comment)
 
     -- vim highlighting
     Group.link('vimVar', groups.Identifier)
