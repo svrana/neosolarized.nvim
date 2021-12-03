@@ -263,6 +263,8 @@ function M.setup(opts)
     Group.new("HarpoonBorder", colors.cyan)
     Group.new("HarpoonWindow", groups.Normal)
 
+    Group.new("NvimTreeFolderIcon", colors.blue)
+
 
     function M.translate(group)
         if fn.has("nvim-0.6.0") == 0 then return group end
