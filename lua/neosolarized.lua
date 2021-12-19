@@ -265,6 +265,10 @@ function M.setup(opts)
 
     Group.new("NvimTreeFolderIcon", colors.blue)
 
+    -- phaazon/hop.nvim
+    Group.link('HopNextKey', groups.IncSearch)
+    Group.link('HopNextKey1', groups.IncSearch)
+    Group.link('HopNextKey2', groups.IncSearch)
 
     function M.translate(group)
         if fn.has("nvim-0.6.0") == 0 then return group end

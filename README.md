@@ -66,6 +66,7 @@ again.
 - kevinwhang91/nvim-bqf
 - Primeagen/harpoon
 - lewis6991/gitsigns.nvim
+- phaazon/hop.nvim
 
 ### TODO
 
