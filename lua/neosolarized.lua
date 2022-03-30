@@ -127,8 +127,8 @@ function M.setup(opts)
     Group.new('FloatBorder', colors.base02)
 
     Group.new('TabLine', colors.base0, colors.base02, styles.NONE, colors.base0)
-    Group.new('TabLineFill', colors.base0, colors.base02, styles.NONE, colors.base0)
-    Group.new('TabLineSel', colors.base01, colors.base02, styles.reverse, colors.base0)
+    Group.new('TabLineFill', colors.base0, colors.base02)
+    Group.new('TabLineSel', colors.yellow, colors.bg)
 
     Group.new('LineNr', colors.base01, colors.none, styles.NONE)
     Group.new('CursorLine', colors.none, colors.base02, styles.NONE, colors.base1)
