@@ -16,12 +16,12 @@ local M = {
 function M.setup(opts)
     if not opts then opts = {} end
 
-    for k,v in pairs(defaults) do
+    for k, v in pairs(defaults) do
         if opts[k] == nil then opts[k] = v end
     end
 
     -- typos are annoying
-    for k,_ in pairs(opts) do
+    for k, _ in pairs(opts) do
         if defaults[k] == nil then print("neosolarized: unknown setting: ", k) end
     end
 
@@ -40,32 +40,32 @@ function M.setup(opts)
     local groups = M.groups
     local styles = M.styles
 
-    Color.new('base03',     '#002b36')
-    Color.new('base02',     '#073642')
-    Color.new('base01',     '#586e75')
-    Color.new('base00',     '#657b83')
-    Color.new('base0',      '#839496')
-    Color.new('base1',      '#93a1a1')
-    Color.new('base2',      '#eee8d5')
-    Color.new('base3',      '#fdf6e3')
-    Color.new('yellow',     '#b58900')
-    Color.new('orange',     '#cb4b16')
-    Color.new('red',        '#dc322f')
-    Color.new('magenta',    '#d33682')
-    Color.new('violet',     '#6c71c4')
-    Color.new('blue',       '#268bd2')
-    Color.new('cyan',       '#2aa198')
-    Color.new('green',      '#719e07')
+    Color.new('base03', '#002b36')
+    Color.new('base02', '#073642')
+    Color.new('base01', '#586e75')
+    Color.new('base00', '#657b83')
+    Color.new('base0', '#839496')
+    Color.new('base1', '#93a1a1')
+    Color.new('base2', '#eee8d5')
+    Color.new('base3', '#fdf6e3')
+    Color.new('yellow', '#b58900')
+    Color.new('orange', '#cb4b16')
+    Color.new('red', '#dc322f')
+    Color.new('magenta', '#d33682')
+    Color.new('violet', '#6c71c4')
+    Color.new('blue', '#268bd2')
+    Color.new('cyan', '#2aa198')
+    Color.new('green', '#719e07')
 
-    Color.new('bg',             colors.base03)
-    Group.new('Error',          colors.red)
-    Group.new('Warning',        colors.yellow)
-    Group.new('Information',    colors.blue)
-    Group.new('Hint',           colors.cyan)
+    Color.new('bg', colors.base03)
+    Group.new('Error', colors.red)
+    Group.new('Warning', colors.yellow)
+    Group.new('Information', colors.blue)
+    Group.new('Hint', colors.cyan)
 
     -- normal non-current text
-    Group.new('Normal',     colors.base0,           colors.NONE, styles.NONE)
-    Group.new('NormalNC',   colors.base0:dark(),    colors.NONE, styles.NONE)
+    Group.new('Normal', colors.base0, colors.NONE, styles.NONE)
+    Group.new('NormalNC', colors.base0:dark(), colors.NONE, styles.NONE)
 
     Group.new('Comment', colors.base01, colors.none, opts.comment_italics and styles.italic or styles.NONE)
     Group.new('Constant', colors.cyan, colors.none, styles.NONE)
@@ -210,46 +210,49 @@ function M.setup(opts)
     -- Group.new('CmpItemAbbr', colors.base0, colors.bg, styles.none)
     -- Group.new('CmpItemAbbrMatch', colors.base0, colors.bg, styles.none)
 
-    Group.new('LspSagaCodeActionTitle',         colors.green)
-    Group.new('LspSagaBorderTitle',             colors.yellow, colors.none, styles.bold)
-    Group.new('LspSagaDiagnosticHeader',        colors.yellow)
-    Group.new('ProviderTruncateLine',           colors.base02)
-    Group.new('LspSagaShTruncateLine',          groups.ProviderTruncateLine)
-    Group.new('LspSagaDocTruncateLine',         groups.ProviderTruncateLine)
-    Group.new('LspSagaCodeActionTruncateLine',  groups.ProviderTruncateLine)
-    Group.new('LspSagaHoverBorder',             colors.cyan)
-    Group.new('LspSagaRenameBorder',            groups.LspSagaHoverBorder)
-    Group.new('LSPSagaDiagnosticBorder',        groups.LspSagaHoverBorder)
-    Group.new('LspSagaSignatureHelpBorder',     groups.LspSagaHoverBorder)
-    Group.new('LspSagaCodeActionBorder',        groups.LspSagaHoverBorder)
-    Group.new('LspSagaLspFinderBorder',         groups.LspSagaHoverBorder)
-    Group.new('LspSagaFloatWinBorder',          groups.LspSagaHoverBorder)
-    Group.new('LspSagaSignatureHelpBorder',     groups.LspSagaHoverBorder)
-    Group.new('LspSagaDefPreviewBorder',        groups.LspSagaHoverBorder)
-    Group.new('LspSagaAutoPreviewBorder',       groups.LspSagaHoverBorder)
-    Group.new('LspFloatWinBorder',              groups.LspSagaHoverBorder)
-    Group.new('LspLinesDiagBorder',             groups.LspSagaHoverBorder)
-    Group.new('LspSagaFinderSelection',         colors.green, colors.none, styles.bold)
+    Group.new('LspSagaCodeActionTitle', colors.green)
+    Group.new('LspSagaBorderTitle', colors.yellow, colors.none, styles.bold)
+    Group.new('LspSagaDiagnosticHeader', colors.yellow)
+    Group.new('ProviderTruncateLine', colors.base02)
+    Group.new('LspSagaShTruncateLine', groups.ProviderTruncateLine)
+    Group.new('LspSagaDocTruncateLine', groups.ProviderTruncateLine)
+    Group.new('LspSagaCodeActionTruncateLine', groups.ProviderTruncateLine)
+    Group.new('LspSagaHoverBorder', colors.cyan)
+    Group.new('LspSagaRenameBorder', groups.LspSagaHoverBorder)
+    Group.new('LSPSagaDiagnosticBorder', groups.LspSagaHoverBorder)
+    Group.new('LspSagaSignatureHelpBorder', groups.LspSagaHoverBorder)
+    Group.new('LspSagaCodeActionBorder', groups.LspSagaHoverBorder)
+    Group.new('LspSagaLspFinderBorder', groups.LspSagaHoverBorder)
+    Group.new('LspSagaFloatWinBorder', groups.LspSagaHoverBorder)
+    Group.new('LspSagaSignatureHelpBorder', groups.LspSagaHoverBorder)
+    Group.new('LspSagaDefPreviewBorder', groups.LspSagaHoverBorder)
+    Group.new('LspSagaAutoPreviewBorder', groups.LspSagaHoverBorder)
+    Group.new('LspFloatWinBorder', groups.LspSagaHoverBorder)
+    Group.new('LspLinesDiagBorder', groups.LspSagaHoverBorder)
+    Group.new('LspSagaFinderSelection', colors.green, colors.none, styles.bold)
     --Group.new('SagaShadow', colors.base02)
 
-    Group.new('TelescopeMatching',      colors.orange, groups.Special, groups.Special, groups.Special)
-    Group.new('TelescopeBorder',        colors.base01) -- float border not quite dark enough, maybe that needs to change?
-    Group.new('TelescopePromptBorder',  colors.cyan)   -- active border lighter for clarity
-    Group.new('TelescopeTitle',         groups.Normal) -- separate them from the border a little, but not make them pop
-    Group.new('TelescopePromptPrefix',  groups.Normal) -- default is groups.Identifier
+    Group.new('TelescopeMatching', colors.orange, groups.Special, groups.Special, groups.Special)
+    Group.new('TelescopeBorder', colors.base01) -- float border not quite dark enough, maybe that needs to change?
+    Group.new('TelescopePromptBorder', colors.cyan) -- active border lighter for clarity
+    Group.new('TelescopeTitle', groups.Normal) -- separate them from the border a little, but not make them pop
+    Group.new('TelescopePromptPrefix', groups.Normal) -- default is groups.Identifier
+    Group.link('TelescopeSelection', groups.CursorLine)
+    Group.new('TelescopeSelectionCaret', colors.cyan)
+
 
     Group.new('NeogitDiffAddHighlight', colors.blue, colors.red)
     Group.new('NeogitDiffDeleteHighlight', colors.blue, colors.red)
     Group.new('NeogitHunkHeader', groups.Normal, colors.base02)
     Group.new('NeogitHunkHeaderHighlight', groups.Normal, colors.red)
     Group.new('NeogitDiffContextHighlight', colors.base2, colors.base02)
-    Group.new('NeogitCommandText',          groups.Normal)
-    Group.new('NeogitCommandTimeText',      groups.Normal)
-    Group.new('NeogitCommandCodeNormal',    groups.Normal)
-    Group.new('NeogitCommandCodeError',     groups.Error)
-    Group.new('NeogitNotificationError',    groups.Error,           colors.none)
-    Group.new('NeogitNotificationInfo',     groups.Information,     colors.none)
-    Group.new('NeogitNotificationWarning',  groups.Warning,         colors.none)
+    Group.new('NeogitCommandText', groups.Normal)
+    Group.new('NeogitCommandTimeText', groups.Normal)
+    Group.new('NeogitCommandCodeNormal', groups.Normal)
+    Group.new('NeogitCommandCodeError', groups.Error)
+    Group.new('NeogitNotificationError', groups.Error, colors.none)
+    Group.new('NeogitNotificationInfo', groups.Information, colors.none)
+    Group.new('NeogitNotificationWarning', groups.Warning, colors.none)
 
     -- seblj/nvim-tabline
     Group.new('TabLineSeparatorActive', colors.cyan)
@@ -284,18 +287,18 @@ function M.setup(opts)
     end
 
     local lspColors = {
-         Error          = groups.Error,
-         Warning        = groups.Warning,
-         Information    = groups.Information,
-         Hint           = groups.Hint,
+        Error       = groups.Error,
+        Warning     = groups.Warning,
+        Information = groups.Information,
+        Hint        = groups.Hint,
     }
-    for _, lsp in pairs({"Error", "Warning", "Information", "Hint"}) do
+    for _, lsp in pairs({ "Error", "Warning", "Information", "Hint" }) do
         local lspGroup = Group.new(M.translate("LspDiagnosticsDefault" .. lsp), lspColors[lsp])
         Group.link(M.translate("LspDiagnosticsVirtualText" .. lsp), lspGroup)
         Group.new(M.translate("LspDiagnosticsUnderline" .. lsp), colors.none, colors.none, styles.undercurl, lspColors[lsp])
     end
 
-    for _, name in pairs({"LspReferenceText", "LspReferenceRead", "LspReferenceWrite"}) do
+    for _, name in pairs({ "LspReferenceText", "LspReferenceRead", "LspReferenceWrite" }) do
         Group.link(M.translate(name), groups.CursorLine)
     end
 
