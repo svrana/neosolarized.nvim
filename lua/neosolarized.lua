@@ -27,8 +27,12 @@ function M.setup(opts)
 
     cmd([[
         packadd! colorbuddy.nvim
-        highlight clear
     ]])
+
+    -- only needed to clear when not the default colorscheme
+    if vim.g.colors_name then
+      vim.cmd("hi clear")
+    end
 
     if fn.exists('syntax_on') then cmd('syntax reset') end
 
