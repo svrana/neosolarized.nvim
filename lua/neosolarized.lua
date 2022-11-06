@@ -302,10 +302,13 @@ function M.setup(opts)
     Group.link('HopNextKey1', groups.IncSearch)
     Group.link('HopNextKey2', groups.IncSearch)
 
-    -- XML-like tags
-    Group.new("@tag", colors.green)
-    Group.new("@tag.attribute", colors.blue)
-    Group.new("@tag.delimiter", colors.red)
+    -- group names with an ampersand throw an error until they gain support in 0.8.0
+    if fn.has("nvim-0.8.0") then
+        -- XML-like tags
+        Group.new("@tag", colors.green)
+        Group.new("@tag.attribute", colors.blue)
+        Group.new("@tag.delimiter", colors.red)
+    end
 
     function M.translate(group)
         if fn.has("nvim-0.6.0") == 0 then return group end
