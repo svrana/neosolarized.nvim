@@ -10,8 +10,8 @@ Based on [NeoSolarized](https://github.com/overcache/NeoSolarized).
 
 I've used a bunch of solarized themes. The best I have found is NeoSolarized. Despite it
 being fantastic, like most themes, I wanted to tweak it here and there and really wanted a
-lua solution for this in the style of the latest and greatest neovim plugins that allow
-customizations via a setup function.
+lua solution for this in the style of the latest and greatest neovim plugins.
+
 
 ## Limitations
 
@@ -29,9 +29,14 @@ After installed colorbuddy and neosolarized.nvim with your favorite package mana
 lua << EOF
   require('neosolarized').setup({
     comment_italics = true,
+    background_set = false,
   })
 EOF
 ```
+
+This theme assumes you have a solarized background set for your terminal, but if you want the
+background set to the background in the photo, change `background_set' option in the your
+setup function to true.
 
 Example above is with the default settings.
 
@@ -52,7 +57,7 @@ again.
 
 ## Features
 
-- Easy customization without messing with nvim highlights
+- Easy customization with colorbuddy without messing with nvim highlights
 - LSP diagnostic colors (no need for lsp-colors, for example)
 
 ### Plugins supported

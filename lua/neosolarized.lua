@@ -3,6 +3,8 @@ local fn = vim.fn
 
 local defaults = {
     comment_italics = true,
+    background_set = false,
+    background_color = require('colorbuddy.init').Color.none,
 }
 
 local M = {
@@ -67,9 +69,15 @@ function M.setup(opts)
     Group.new('Information', colors.blue)
     Group.new('Hint', colors.cyan)
 
+    if opts["background_set"] and opts["background_color"] == Color.none then
+        opts["background_color"] = colors.base03
+    end
+
+    local bg_color = opts["background_color"]
+
     -- normal non-current text
-    Group.new('Normal', colors.base0, colors.NONE, styles.NONE)
-    Group.new('NormalNC', colors.base0:dark(), colors.NONE, styles.NONE)
+    Group.new('Normal', colors.base0, bg_color, styles.NONE)
+    Group.new('NormalNC', colors.base0:dark(), bg_color, styles.NONE)
 
     Group.new('Comment', colors.base01, colors.none, opts.comment_italics and styles.italic or styles.NONE)
     Group.new('Constant', colors.cyan, colors.none, styles.NONE)
@@ -134,7 +142,7 @@ function M.setup(opts)
     Group.new('TabLineFill', colors.base0, colors.base02)
     Group.new('TabLineSel', colors.yellow, colors.bg)
 
-    Group.new('LineNr', colors.base01, colors.none, styles.NONE)
+    Group.new('LineNr', colors.base01, bg_color, styles.NONE)
     Group.new('CursorLine', colors.none, colors.base02, styles.NONE, colors.base1)
     Group.new('CursorLineNr', colors.none, colors.none, styles.NONE, colors.base1)
     Group.new('ColorColumn', colors.none, colors.base02, styles.NONE)
