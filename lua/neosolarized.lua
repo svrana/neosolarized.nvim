@@ -33,9 +33,7 @@ function M.setup(opts)
 		end
 	end
 
-	cmd([[
-        packadd! colorbuddy.nvim
-    ]])
+	cmd([[ packadd! colorbuddy.nvim ]])
 
 	-- only needed to clear when not the default colorscheme
 	if vim.g.colors_name then
@@ -316,6 +314,11 @@ function M.setup(opts)
 	Group.link("HopNextKey", groups.IncSearch)
 	Group.link("HopNextKey1", groups.IncSearch)
 	Group.link("HopNextKey2", groups.IncSearch)
+
+	-- https://github.com/j-hui/fidget.nvim (for some reason the background
+	-- is only correct if used with background_set = true) even when set below)
+	Group.new("FidgetTitle", colors.magenta)
+	Group.new("FidgetTask", colors.base0)
 
 	-- group names with an ampersand throw an error until they gain support in 0.8.0
 	if fn.has("nvim-0.8.0") then
