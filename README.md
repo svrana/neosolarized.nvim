@@ -12,7 +12,6 @@ I've used a bunch of solarized themes. The best I have found is NeoSolarized. De
 being fantastic, like most themes, I wanted to tweak it here and there and really wanted a
 lua solution for this in the style of the latest and greatest neovim plugins.
 
-
 ## Limitations
 
 - dark only
@@ -35,8 +34,9 @@ EOF
 ```
 
 This theme assumes you have a solarized background set for your terminal, but if you want the
-background set to the background in the photo, change `background_set' option in the your
-setup function to true.
+background set to the background in the photo, change `background_set` option in the your
+setup function to true. If you would terminal is transparent and you do not want neovim to
+color the background, keep/or set `background_set = false`.
 
 Example above is with the default settings.
 
@@ -59,6 +59,7 @@ again.
 
 - Easy customization with colorbuddy without messing with nvim highlights
 - LSP diagnostic colors (no need for lsp-colors, for example)
+- Treesitter highlights
 
 ### Plugins supported
 
@@ -72,11 +73,8 @@ again.
 - Primeagen/harpoon
 - lewis6991/gitsigns.nvim
 - phaazon/hop.nvim
+- j-hui/fidget
 
 ### TODO
 
-- pum/lsp-cmp style improvements (A dark background option would be nice)
-- treesitter highlights have not been defined. I do use treesitter for highlighting but
-  the existing groups have worked well enough for me up to this point.
-- port the remaining features from neosolarized if they are requested by others
 - non-truecolors version for console use
