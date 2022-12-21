@@ -33,8 +33,6 @@ function M.setup(opts)
 		end
 	end
 
-	cmd([[ packadd! colorbuddy.nvim ]])
-
 	-- only needed to clear when not the default colorscheme
 	if vim.g.colors_name then
 		vim.cmd("hi clear")
