@@ -1,0 +1,15 @@
+These were changed after version .0.9. If you like it the way it was, you may try this lua
+code:
+
+```
+local n = require('neosolarized').setup({
+  comment_italics = true,
+  background_set = true, -- set this to false if you use transparency
+})
+n.Groups.new("@parameter", n.colors.base0)
+n.Groups.new("@variable", n.colors.blue)
+n.Groups.new("Special", colors.red)
+n.Groups.new("Preproc", colors.orange)
+-- n.Group.link('WarningMsg', n.groups.Comment) -- my personal preference, but this hasn't changed
+
+```
