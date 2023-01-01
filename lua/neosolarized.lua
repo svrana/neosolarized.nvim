@@ -91,9 +91,9 @@ function M.setup(opts)
 
 	-- any statement, conditional, repeat (for, do while), label, operator
 	Group.new("Statement", colors.green)
-	Group.new("PreProc", colors.orange)
+	Group.new("PreProc", colors.red) -- was orange
 	Group.new("Type", colors.yellow)
-	Group.new("Special", colors.orange)
+	Group.new("Special", colors.orange) -- was red
 	Group.new("SpecialKey", colors.base00)
 	Group.new("Underlined", colors.violet)
 	Group.new("Strikethrough", colors.base01, colors.none, styles.strikethrough)
