@@ -334,7 +334,11 @@ function M.setup(opts)
 	Group.new("HarpoonBorder", colors.cyan)
 	Group.new("HarpoonWindow", groups.Normal)
 
+	-- nvim-tree/nvim-tree.lua
 	Group.new("NvimTreeFolderIcon", colors.blue)
+	Group.new("NvimTreeRootFolder", colors.orange)
+	Group.new("NvimTreeImageFile", colors.orange)
+	Group.new("NvimTreeSpecialFile", colors.orange, colors.none, styles.bold + styles.underline)
 
 	-- phaazon/hop.nvim
 	Group.link("HopNextKey", groups.IncSearch)
