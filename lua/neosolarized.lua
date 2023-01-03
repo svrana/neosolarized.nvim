@@ -172,6 +172,7 @@ function M.setup(opts)
 	Group.new("TabLine", colors.base0, colors.base02, styles.NONE, colors.base0)
 	Group.new("TabLineFill", colors.base0, colors.base02)
 	Group.new("TabLineSel", colors.yellow, colors.bg)
+	Group.new("TabLineSeparatorSel", colors.cyan, colors.none)
 
 	Group.new("LineNr", colors.base01, bg_color, styles.NONE)
 	Group.new("CursorLine", colors.none, colors.base02, styles.NONE, colors.base1)
