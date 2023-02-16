@@ -26,13 +26,6 @@ function M.setup(opts)
 		end
 	end
 
-	-- typos are annoying
-	for k, _ in pairs(opts) do
-		if defaults[k] == nil then
-			print("neosolarized: unknown setting: ", k)
-		end
-	end
-
 	-- only needed to clear when not the default colorscheme
 	if vim.g.colors_name then
 		vim.cmd("hi clear")
