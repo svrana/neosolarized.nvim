@@ -499,6 +499,29 @@ function M.setup(opts)
 		Group.new("@text.danger", colors.red, colors.none, styles.bold)
 	end
 
+	if fn.has("nvim-0.9.0") then
+		Group.link("@lsp.type.type", groups.Type)
+		Group.link("@lsp.type.class", groups.Type)
+		Group.link("@lsp.type.enum", groups.Type)
+		Group.link("@lsp.type.interface", groups.Type)
+		Group.link("@lsp.type.struct", groups.Type)
+		Group.link("@lsp.type.typeParameter", groups.Type)
+		Group.link("@lsp.type.parameter", groups.Parameter)
+		Group.link("@lsp.type.variable", groups.Variable)
+		Group.link("@lsp.type.property", groups.TSProperty)
+		Group.link("@lsp.type.enumMember", groups.TSProperty)
+		Group.link("@lsp.type.events", groups.Label)
+		Group.link("@lsp.type.function", groups.Function)
+		Group.link("@lsp.type.method", groups.Method)
+		Group.link("@lsp.type.keyword", groups.Keyword)
+		Group.link("@lsp.type.modifier", groups.Operator)
+		Group.link("@lsp.type.comment", groups.Comment)
+		Group.link("@lsp.type.string", groups.String)
+		Group.link("@lsp.type.number", groups.Number)
+		Group.link("@lsp.type.regexp", groups.TSStringRegex)
+		Group.link("@lsp.type.operator", groups.Operator)
+	end
+
 	function M.translate(group)
 		if fn.has("nvim-0.6.0") == 0 then
 			return group
