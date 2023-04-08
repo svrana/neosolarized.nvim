@@ -397,6 +397,8 @@ function M.setup(opts)
 	Group.new("DiagnosticUnderlineHint", colors.none, colors.none, styles.underline)
 	Group.link("DiagnosticVirtualTextHint", groups.Comment)
 	Group.link("DiagnosticTextWarn", groups.WarningMsg)
+	Group.link("DiagnosticUnnecessary", groups.DiagnosticTextWarn)
+	Group.link("DiagnosticDeprecated", groups.DiagnosticTextWarn)
 
 	Group.new("LspReferenceRead", colors.none, colors.none, styles.underline)
 	Group.link("LspReferenceText", groups.LspReferenceRead)
