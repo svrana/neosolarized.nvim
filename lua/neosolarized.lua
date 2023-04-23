@@ -133,7 +133,7 @@ function M.setup(opts)
 	Group.new("WarningMsg", colors.orange, colors.none, styles.bold)
 	Group.new("WildMenu", colors.base2, colors.base02, styles.reverse)
 	Group.new("Folded", colors.base0, colors.base02, styles.bold, colors.base03)
-	Group.new("FoldColumn", colors.base0, colors.base02)
+	Group.new("FoldColumn", colors.base0, colors.none, styles.NONE)
 
 	Group.new("DiffAdd", colors.green, colors.base02, styles.bold, colors.green)
 	Group.new("DiffChange", colors.yellow, colors.base02, styles.bold, colors.yellow)
