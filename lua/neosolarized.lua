@@ -72,8 +72,9 @@ function M.setup(opts)
 
 	local bg_color = opts["background_color"]
 
-	-- normal non-current text
 	Group.new("Normal", colors.base0, bg_color)
+	Group.new("NormalFloat", colors.base0, not opts["background_set"] and Color.none or colors.base02)
+	-- normal non-current text
 	Group.new("NormalNC", colors.base0:dark(), bg_color)
 
 	Group.new("Comment", colors.base01, colors.none, opts.comment_italics and styles.italic or styles.NONE)
