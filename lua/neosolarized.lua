@@ -60,7 +60,6 @@ function M.setup(opts)
 	Color.new("cyan", "#2aa198")
 	Color.new("green", "#719e07")
 
-	Color.new("bg", colors.base03)
 	Group.new("Error", colors.red)
 	Group.new("Warning", colors.yellow)
 	Group.new("Information", colors.blue)
@@ -165,7 +164,7 @@ function M.setup(opts)
 
 	Group.new("TabLine", colors.base0, colors.base02, styles.NONE, colors.base0)
 	Group.new("TabLineFill", colors.base0, colors.base02)
-	Group.new("TabLineSel", colors.yellow, colors.bg)
+	Group.new("TabLineSel", colors.yellow, bg_color)
 	Group.new("TabLineSeparatorSel", colors.cyan, colors.none)
 
 	Group.new("LineNr", colors.base01, bg_color, styles.NONE)
