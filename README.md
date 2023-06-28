@@ -47,7 +47,7 @@ would like this colorscheme to set the background (as in the screenshots above) 
 lua << EOF
   require('neosolarized').setup({
     comment_italics = true,
-    background_set = false,
+    background_set = true,
   })
 EOF
 ```
