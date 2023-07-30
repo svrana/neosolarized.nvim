@@ -302,7 +302,7 @@ function M.setup(opts)
 	Group.link("TelescopeSelection", groups.CursorLine)
 	Group.new("TelescopeSelectionCaret", colors.cyan)
 
-	Group.new("NeogitDiffAddHighlight", colors.base0, colors.base02)
+	Group.new("NeogitDiffAddHighlight", colors.green, colors.base02)
 	Group.new("NeogitDiffDeleteHighlight", colors.red, colors.base02)
 	Group.new("NeogitHunkHeader", groups.Normal, colors.base02)
 	Group.new("NeogitHunkHeaderHighlight", colors.base3, colors.base1)
