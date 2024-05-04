@@ -102,6 +102,7 @@ For more information about how to use colorbuddy, check out the colorbuddy's REA
 - lewis6991/gitsigns.nvim
 - phaazon/hop.nvim
 - j-hui/fidget
+- nvim-lualine/lualine.nvim
 
 ### TODO
 

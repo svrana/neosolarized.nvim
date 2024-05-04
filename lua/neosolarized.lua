@@ -127,8 +127,7 @@ function M.setup(opts)
 	Group.new("MoreMsg", colors.blue, colors.none, styles.NONE)
 	Group.new("ModeMsg", colors.blue, colors.none, styles.NONE)
 	Group.new("Question", colors.cyan, colors.none, styles.bold)
-	Group.new("WinSeparator", colors.base00, colors.none, styles.NONE)
-	Group.link("VertSplit", groups.WinSeparator)
+	Group.new("VertSplit", colors.base00, colors.none, styles.NONE)
 	Group.new("Title", colors.orange, colors.none, styles.bold)
 	Group.new("VisualNOS", colors.none, colors.base02, styles.reverse)
 	Group.new("WarningMsg", colors.orange, colors.none, styles.bold)
@@ -408,7 +407,7 @@ function M.setup(opts)
 	Group.new("WhichKeyDesc", colors.cyan, colors.base02)
 
 	-- group names with an ampersand throw an error until they gain support in 0.8.0
-	if fn.has("nvim-0.8.0") ~= 0 then
+	if fn.has("nvim-0.8.0") then
 		-- XML-like tags
 		Group.new("@tag", colors.green)
 		Group.new("@tag.attribute", colors.blue)
@@ -498,19 +497,9 @@ function M.setup(opts)
 		Group.link("@text.note", groups.Comment)
 		Group.link("@text.warning", groups.WarningMsg)
 		Group.new("@text.danger", colors.red, colors.none, styles.bold)
-
-		Group.new("NoiceCmdlinePopupBorder", colors.cyan)
-		Group.new("NoiceConfirmBorder", colors.cyan)
-		Group.new("NoiceCmdlinePopupBorderSearch", colors.cyan)
-		Group.new("NoiceCmdlinePopupTitle", colors.base0)
-		Group.new("NoiceCmdlinePrompt", colors.base0)
-		Group.new("NoiceCmdlineIconSearch", colors.base0)
-		Group.new("NoiceCmdlineIcon", colors.base0)
-		Group.new("NoiceFormatTitle", colors.base0)
-
 	end
 
-	if fn.has("nvim-0.9.0") ~= 0 then
+	if fn.has("nvim-0.9.0") then
 		Group.link("@lsp.type.type", groups.Type)
 		Group.link("@lsp.type.class", groups.Type)
 		Group.link("@lsp.type.enum", groups.Type)
