@@ -498,7 +498,6 @@ function M.setup(opts)
 		Group.link("@text.note", groups.Comment)
 		Group.link("@text.warning", groups.WarningMsg)
 		Group.new("@text.danger", colors.red, colors.none, styles.bold)
-
 		Group.new("NoiceCmdlinePopupBorder", colors.cyan)
 		Group.new("NoiceConfirmBorder", colors.cyan)
 		Group.new("NoiceCmdlinePopupBorderSearch", colors.cyan)
@@ -507,7 +506,6 @@ function M.setup(opts)
 		Group.new("NoiceCmdlineIconSearch", colors.base0)
 		Group.new("NoiceCmdlineIcon", colors.base0)
 		Group.new("NoiceFormatTitle", colors.base0)
-
 	end
 
 	if fn.has("nvim-0.9.0") ~= 0 then
