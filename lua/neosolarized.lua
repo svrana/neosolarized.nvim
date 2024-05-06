@@ -408,7 +408,7 @@ function M.setup(opts)
 	Group.new("WhichKeyDesc", colors.cyan, colors.base02)
 
 	-- group names with an ampersand throw an error until they gain support in 0.8.0
-	if fn.has("nvim-0.8.0") then
+	if fn.has("nvim-0.8.0") ~= 0 then
 		-- XML-like tags
 		Group.new("@tag", colors.green)
 		Group.new("@tag.attribute", colors.blue)
@@ -508,7 +508,7 @@ function M.setup(opts)
 		Group.new("NoiceFormatTitle", colors.base0)
 	end
 
-	if fn.has("nvim-0.9.0") then
+	if fn.has("nvim-0.9.0") ~= 0 then
 		Group.link("@lsp.type.type", groups.Type)
 		Group.link("@lsp.type.class", groups.Type)
 		Group.link("@lsp.type.enum", groups.Type)
