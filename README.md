@@ -72,6 +72,8 @@ lua << EOF
   })
   -- for some reason some code actions get highlighted with WarningMsg and it's too much for me
   n.Group.link('WarningMsg', n.groups.Comment)
+
+  vim.cmd("colorscheme neosolarized")
 EOF
 ```
 
