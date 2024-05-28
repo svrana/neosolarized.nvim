@@ -1,7 +1,7 @@
 local cmd = vim.cmd
 local fn = vim.fn
 
-local defaults = {
+local config = {
 	comment_italics = true,
 	background_set = false,
 	background_color = require("colorbuddy.init").Color.none,
@@ -15,20 +15,10 @@ local M = {
 	styles = require("colorbuddy.init").styles,
 }
 
-function M.setup(opts)
-	if not opts then
-		opts = {}
-	end
-
-	for k, v in pairs(defaults) do
-		if opts[k] == nil then
-			opts[k] = v
-		end
-	end
-
+function M.set_colors()
 	-- only needed to clear when not the default colorscheme
 	if vim.g.colors_name then
-		vim.cmd("hi clear")
+		cmd("hi clear")
 	end
 
 	if fn.exists("syntax_on") then
@@ -65,18 +55,18 @@ function M.setup(opts)
 	Group.new("Information", colors.blue)
 	Group.new("Hint", colors.cyan)
 
-	if opts["background_set"] and opts["background_color"] == Color.none then
-		opts["background_color"] = colors.base03
+	if config.background_set and config.background_color == Color.none then
+		config.background_color = colors.base03
 	end
 
-	local bg_color = opts["background_color"]
+	local bg_color = config.background_color
 
 	Group.new("Normal", colors.base0, bg_color)
-	Group.new("NormalFloat", colors.base0, not opts["background_set"] and Color.none or colors.base02)
+	Group.new("NormalFloat", colors.base0, not config.background_set and Color.none or colors.base02)
 	-- normal non-current text
 	Group.new("NormalNC", colors.base0:dark(), bg_color)
 
-	Group.new("Comment", colors.base01, colors.none, opts.comment_italics and styles.italic or styles.NONE)
+	Group.new("Comment", colors.base01, colors.none, config.comment_italics and styles.italic or styles.NONE)
 	Group.new("Constant", colors.cyan)
 	Group.new("Identifier", colors.blue)
 
@@ -569,6 +559,10 @@ function M.setup(opts)
 	for _, name in pairs({ "LspReferenceText", "LspReferenceRead", "LspReferenceWrite" }) do
 		Group.link(M.translate(name), groups.CursorLine)
 	end
+end
+
+function M.setup(opts)
+	config = vim.tbl_deep_extend("force", config, opts)
 
 	return M
 end

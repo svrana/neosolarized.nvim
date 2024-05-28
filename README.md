@@ -37,6 +37,8 @@ lua << EOF
     background_set = false,
   })
 EOF
+
+colorscheme neosolarized
 ```
 
 Example above is with the default settings that assumes a transparent terminal. If you
@@ -50,6 +52,8 @@ lua << EOF
     background_set = true,
   })
 EOF
+
+colorscheme neosolarized
 ```
 
 ### Customization
