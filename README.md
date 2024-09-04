@@ -25,6 +25,31 @@ to you in the setup call for reuse.
 
 Make sure you have [colorbuddy](https://github.com/tjdevries/colorbuddy.vim) installed.
 
+## Installation
+
+Install the plugin with your preferred package manager:
+
+## [lazy.nvim](https://github.com/folke/lazy.nvim)
+
+```lua
+-- lua
+{
+  "svrana/neosolarized.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require("neosolarized").setup({
+      comment_italics = true,
+      background_set = false,
+    })
+    vim.cmd.colorscheme("neosolarized")
+  end,
+  dependencies = {
+    "tjdevries/colorbuddy.nvim",
+  },
+}
+```
+
 ### Setup
 
 After installing colorbuddy and neosolarized.nvim with your favorite package manager add
