@@ -167,6 +167,8 @@ function M.set_colors()
 	Group.link("TermCursor", groups.Cursor)
 	Group.new("TermCursorNC", colors.base03, colors.base01)
 
+	Group.new("WinBar", colors.none, colors.none, styles.NONE)
+
 	Group.new("MatchParen", colors.red, colors.base01, styles.bold)
 
 	Group.new("GitGutterAdd", colors.green)
@@ -333,6 +335,9 @@ function M.set_colors()
 	-- is only correct if used with background_set = true) even when set below)
 	Group.new("FidgetTitle", colors.magenta)
 	Group.new("FidgetTask", colors.base0)
+
+	--Group.new("minimapRange",colors.cyan, colors.base0)
+	--Group.new("minimapCursor",colors.cyan, colors.base0)
 
 	-- TreeSitter
 	Group.link("TSBoolean", groups.Constant)
